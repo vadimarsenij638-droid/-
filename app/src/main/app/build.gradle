@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.assistant.diana"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    
+    // Бібліотека для Gemini
+    implementation 'com.google.ai.client.generativeai:generativeai:0.4.0'
+    
+    // Для роботи з HTTP запитами (новини, погода)
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+}
